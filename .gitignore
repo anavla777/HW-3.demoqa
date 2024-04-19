@@ -38,4 +38,4 @@ out/
 !**/src/test/**/out/
 
 ### Gradle ###
-*.gradle
+.gradle
