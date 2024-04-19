@@ -35,6 +35,7 @@ public class DemoqaFormTest {
         $("#react-select-3-input").setValue("Haryana").pressEnter();
         $("#react-select-4-input").setValue("Panipat").pressEnter();
         $("#submit").click();
+        
         $x("//table/tbody/tr[1]/td[2]").shouldHave(text("Jensen Huang"));
         $x("//table/tbody/tr[2]/td[2]").shouldHave(text("test@mail.com"));
         $x("//table/tbody/tr[3]/td[2]").shouldHave(text("Male"));
@@ -45,6 +46,5 @@ public class DemoqaFormTest {
         $x("//table/tbody/tr[8]/td[2]").shouldHave(text("selenide-logo-big.png"));
         $x("//table/tbody/tr[9]/td[2]").shouldHave(text("Groove street 1"));
         $x("//table/tbody/tr[10]/td[2]").shouldHave(text("Haryana Panipat"));
-
     }
 }
