@@ -22,7 +22,7 @@ public class DemoqaFormTest {
         $("#firstName").setValue("Jensen");
         $("#lastName").setValue("Huang");
         $("#userEmail").setValue("test@mail.com");
-        $("label[for=gender-radio-1]").click();
+        $x("//label[contains(text(),'Male')]").click();
         $("#userNumber").setValue("1111111111");
         $("#dateOfBirthInput").clear();
         $(".react-datepicker__month-select").selectOption("January");
@@ -32,8 +32,8 @@ public class DemoqaFormTest {
         $("#subjectsInput").setValue("Physics").pressEnter();
         $("#subjectsInput").setValue("Computer Science").pressEnter();
 
-        $("label[for=hobbies-checkbox-2]").click();
-        $("label[for=hobbies-checkbox-3]").click();
+        $x("//label[contains(text(),'Reading')]").click();
+        $x("//label[contains(text(),'Music')]").click();
 
         $("#uploadPicture").uploadFromClasspath("selenide-logo-big.png");
 
