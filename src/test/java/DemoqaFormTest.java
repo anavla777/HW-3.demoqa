@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DemoqaFormTest {
@@ -22,7 +23,7 @@ public class DemoqaFormTest {
         $("#firstName").setValue("Jensen");
         $("#lastName").setValue("Huang");
         $("#userEmail").setValue("test@mail.com");
-        $x("//label[contains(text(),'Male')]").click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1111111111");
         $("#dateOfBirthInput").clear();
         $(".react-datepicker__month-select").selectOption("January");
@@ -32,16 +33,16 @@ public class DemoqaFormTest {
         $("#subjectsInput").setValue("Physics").pressEnter();
         $("#subjectsInput").setValue("Computer Science").pressEnter();
 
-        $x("//label[contains(text(),'Reading')]").click();
-        $x("//label[contains(text(),'Music')]").click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
 
         $("#uploadPicture").uploadFromClasspath("selenide-logo-big.png");
 
         $("#currentAddress").setValue("Groove street 1");
         $("#state").click();
-        $x("//div[contains(text(),'Haryana')]").click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
         $("#city").click();
-        $x("//div[contains(text(),'Panipat')]").click();
+        $("#stateCity-wrapper").$(byText("Panipat")).click();
 
         $("#submit").click();
 
